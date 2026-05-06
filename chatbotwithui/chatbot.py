@@ -33,9 +33,6 @@ chatbot = graph.compile(checkpointer= checkpointer)
 
 thread_id = "1"
 
-from chatbot import chatbot, HumanMessage
-
-thread_id = "1"
 
 def chat(message):
     config = {"configurable": {"thread_id": thread_id}}

@@ -18,14 +18,13 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
-    thread_id: str = "1"
+    thread_id: str = "default"
 
 
-thread_id = "1"
 
 @app.post("/chat")
 def chat(req: ChatRequest):
-    config = {"configurable": {"thread_id": thread_id}}
+    config = {"configurable": {"thread_id": req.thread_id}}
     state = {"messages": [HumanMessage(content=req.message)]}
 
     def generate():
