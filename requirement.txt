@@ -4,3 +4,6 @@ langchain-community
 langchain-groq
 langgraph 
 dotenv
+fastapi
+uvicorn
+langgraph-checkpoint-sqlite
