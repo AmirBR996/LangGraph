@@ -7,3 +7,5 @@ dotenv
 fastapi
 uvicorn
 langgraph-checkpoint-sqlite
+pypdf
+sentence-transformers
