@@ -9,3 +9,4 @@ uvicorn
 langgraph-checkpoint-sqlite
 pypdf
 sentence-transformers
+ddgs
