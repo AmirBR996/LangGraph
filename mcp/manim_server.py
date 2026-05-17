@@ -6,29 +6,24 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP()
 
-# Get Manim executable path from environment variables or assume it's in the system PATH
-MANIM_EXECUTABLE = os.getenv("MANIM_EXECUTABLE", "manim")   #MANIM_PATH "/Users/[Your_username]/anaconda3/envs/manim2/Scripts/manim.exe"
+MANIM_EXECUTABLE = os.getenv("MANIM_EXECUTABLE", "manim")  
 
 TEMP_DIRS = {}
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "media")
-os.makedirs(BASE_DIR, exist_ok=True)  # Ensure the media folder exists
+os.makedirs(BASE_DIR, exist_ok=True)  
 
 @mcp.tool()
 def execute_manim_code(manim_code: str) -> str:
-    """Execute the Manim code"""
-    # tmpdir = tempfile.mkdtemp()  # Creates a temp directory that won't be deleted immediately
     tmpdir = os.path.join(BASE_DIR, "manim_tmp")  
-    os.makedirs(tmpdir, exist_ok=True)  # Ensure the temp folder exists
+    os.makedirs(tmpdir, exist_ok=True) 
     script_path = os.path.join(tmpdir, "scene.py")
     
     try:
-        # Write the Manim script to the temp directory
         with open(script_path, "w") as script_file:
             script_file.write(manim_code)
         
-        # Execute Manim with the correct path
         result = subprocess.run(
-            [MANIM_EXECUTABLE, "-p", script_path], #MANIM_PATH "/Users/[Your_username]/anaconda3/envs/manim2/Scripts/manim.exe"
+            [MANIM_EXECUTABLE, "-p", script_path], 
             capture_output=True,
             text=True,
             cwd=tmpdir
@@ -62,7 +57,6 @@ def cleanup_manim_temp_dir(directory: str) -> str:
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
-
 
 
 
