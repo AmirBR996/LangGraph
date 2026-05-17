@@ -10,3 +10,6 @@ langgraph-checkpoint-sqlite
 pypdf
 sentence-transformers
 ddgs
+mcp 
+manim
+uv
