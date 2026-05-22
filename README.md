@@ -56,7 +56,7 @@ LangGraph/
 ├── requirements.txt  # Python dependencies
 └── README.md
 ```
-*(Structure may vary depending on actual contents)*
+
 
 ---
 
