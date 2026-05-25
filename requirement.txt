@@ -7,9 +7,9 @@ dotenv
 fastapi
 uvicorn
 langgraph-checkpoint-sqlite
+langchain-text-splitters
 pypdf
 sentence-transformers
 ddgs
 mcp 
-manim
-uv
+faiss-cpu
