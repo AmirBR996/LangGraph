@@ -46,4 +46,4 @@ def chat(message):
             print(chunk.content, end="", flush=True)
 
 if __name__ == "__main__":
-    chat("give me essay on 500 words about dynamics")
+    chat("give me essay on 500 words about fluid dynamics")
